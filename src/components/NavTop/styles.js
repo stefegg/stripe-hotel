@@ -34,6 +34,7 @@ export const HeaderOne = styled.h1`
 
 export const SubHeader = styled.p`
   margin: 0px;
+  font-style: italic;
 `;
 
 export const Icon = styled.img`
