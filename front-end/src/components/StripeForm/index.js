@@ -32,7 +32,7 @@ const StripeForm = () => {
     if (!error) {
       try {
         const { id } = paymentMethod;
-        const response = await axios.post("http://localhost:4000/payment", {
+        const response = await axios.post("/payment", {
           amount: totalPrice * 100,
           id,
         });
