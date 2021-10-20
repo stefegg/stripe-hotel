@@ -14,6 +14,7 @@ export const LeftPane = styled.div`
   padding: 20px;
   max-height: 100%;
   overflow: scroll;
+  overflow-x: hidden;
 `;
 
 export const RightPane = styled.div`
