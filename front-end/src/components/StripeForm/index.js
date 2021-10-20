@@ -32,10 +32,13 @@ const StripeForm = () => {
     if (!error) {
       try {
         const { id } = paymentMethod;
-        const response = await axios.post("/payment", {
-          amount: totalPrice * 100,
-          id,
-        });
+        const response = await axios.post(
+          "https://stripe-hotel.herokuapp.com/payment",
+          {
+            amount: totalPrice * 100,
+            id,
+          }
+        );
         if (response.data.success) {
           setShowSiteModal(null);
           console.log("Successful Payment");

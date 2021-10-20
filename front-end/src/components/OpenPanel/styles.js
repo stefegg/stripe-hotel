@@ -16,6 +16,8 @@ export const Header = styled.div`
   border-bottom: 1px solid black;
   padding: 12px;
   background: #5c7eec;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 `;
 
 export const Body = styled.div`
@@ -23,6 +25,8 @@ export const Body = styled.div`
   display: flex;
   flex-direction: row;
   background: #e9c697;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 `;
 
 export const Icon = styled.img`
