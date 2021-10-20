@@ -4,6 +4,7 @@ export const Body = styled.div`
   display: grid;
   grid-template-columns: 70% 30%;
   height: calc(100vh - 100px);
+  background: #d9ddee;
 `;
 
 export const LeftPane = styled.div`

@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   border: 1px solid black;
   margin: 20px 0px;
   border-radius: 4px;
+  background: #fff;
 `;
 
 export const Header = styled.div`
@@ -14,12 +15,14 @@ export const Header = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid black;
   padding: 12px;
+  background: #5c7eec;
 `;
 
 export const Body = styled.div`
   padding: 12px;
   display: flex;
   flex-direction: row;
+  background: #e9c697;
 `;
 
 export const Icon = styled.img`

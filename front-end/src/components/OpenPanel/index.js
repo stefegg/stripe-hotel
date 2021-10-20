@@ -33,7 +33,11 @@ const OpenPanel = ({ data }) => {
         </DetailWrap>
         <PriceWrap>
           {`$${price}`} per night
-          <Button text={"Add to Cart"} onClick={() => clickAdd()} />
+          <Button
+            text={"Add to Cart"}
+            onClick={() => clickAdd()}
+            border={"1px solid white"}
+          />
         </PriceWrap>
       </Body>
     </Wrapper>

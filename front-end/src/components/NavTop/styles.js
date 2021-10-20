@@ -1,16 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const hop = keyframes`
-  0% {
-    padding-bottom: 0px;
-  }
-  50% {
-    padding-bottom: 10px;
-  }
-  100% {
-    padding-bottom: 0px;
-  }
-`;
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -23,6 +11,7 @@ export const Wrapper = styled.div`
   overflow: hidden;
   position: relative;
   border-bottom: 1px solid black;
+  background: #5c7eec;
 `;
 
 export const HeaderOne = styled.h1`
@@ -36,22 +25,4 @@ export const HeaderOne = styled.h1`
 export const SubHeader = styled.p`
   margin: 0px;
   font-style: italic;
-`;
-
-export const Icon = styled.img`
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  position: absolute;
-  right: 40px;
-  cursor: pointer;
-  transition: 1s;
-  &:hover {
-    filter: invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg)
-      brightness(96%) contrast(98%);
-    transform: rotate(30deg);
-    transition-property: filter, transform;
-    transition-duration: 2s, 1s;
-    animation: 1s ${hop} ease-out;
-  }
 `;
