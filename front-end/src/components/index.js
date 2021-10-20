@@ -7,7 +7,7 @@ import Cart from "./Cart";
 import StripeForm from "./StripeForm";
 import StripeContainer from "./StripeContainer";
 import SuccessModal from "./SuccessModal";
-
+import LoadingModal from "./LoadingModal";
 export {
   NavTop,
   OpenPanel,
@@ -18,4 +18,5 @@ export {
   StripeForm,
   StripeContainer,
   SuccessModal,
+  LoadingModal,
 };

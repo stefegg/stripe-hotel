@@ -12,7 +12,7 @@ import { Button } from "..";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
-import { SuccessModal } from "..";
+import { SuccessModal, LoadingModal } from "..";
 
 const StripeForm = () => {
   const stripe = useStripe();
@@ -20,11 +20,11 @@ const StripeForm = () => {
   const [cardError, setCardError] = useState(null);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [cart, setCart] = useRecoilState(atoms.cart);
-  console.log(cart, "-------c");
   const { totalPrice } = cart;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setCardError(null);
+    setShowSiteModal(<LoadingModal />);
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
@@ -37,10 +37,12 @@ const StripeForm = () => {
           id,
         });
         if (response.data.success) {
+          setShowSiteModal(null);
           console.log("Successful Payment");
           setShowSiteModal(<SuccessModal />);
         }
       } catch (error) {
+        setShowSiteModal(null);
         console.log("Error", error);
       }
     } else {
