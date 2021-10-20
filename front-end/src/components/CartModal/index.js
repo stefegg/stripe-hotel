@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "../index";
 import { Wrapper, Body, ButtonWrapper } from "./styles";
 import { useRecoilState } from "recoil";
@@ -23,6 +24,7 @@ const CartModal = ({ data }) => {
           width={"150px"}
           border={"1px solid green"}
           textColor={"green"}
+          backgroundColor={"white"}
         />
         <Button
           text={"No"}
@@ -30,6 +32,7 @@ const CartModal = ({ data }) => {
           onClick={() => setShowSiteModal(null)}
           border={"1px solid red"}
           textColor={"red"}
+          backgroundColor={"white"}
         />
       </ButtonWrapper>
     </Wrapper>

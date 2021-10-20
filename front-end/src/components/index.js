@@ -6,6 +6,7 @@ import CartModal from "./CartModal";
 import Cart from "./Cart";
 import StripeForm from "./StripeForm";
 import StripeContainer from "./StripeContainer";
+import SuccessModal from "./SuccessModal";
 
 export {
   NavTop,
@@ -16,4 +17,5 @@ export {
   Cart,
   StripeForm,
   StripeContainer,
+  SuccessModal,
 };

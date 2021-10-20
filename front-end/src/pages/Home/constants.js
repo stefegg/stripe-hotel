@@ -12,6 +12,8 @@ export const KING = {
   ],
   image: king,
   price: 500,
+  tax: 50,
+  totalPrice: 550,
 };
 
 export const QUEEN = {
@@ -26,6 +28,8 @@ export const QUEEN = {
   ],
   image: queen,
   price: 400,
+  tax: 40,
+  totalPrice: 440,
 };
 
 export const FULL = {
@@ -40,6 +44,8 @@ export const FULL = {
   ],
   image: full,
   price: 350,
+  tax: 35,
+  totalPrice: 385,
 };
 
 export const DOUBLE = {
@@ -54,4 +60,6 @@ export const DOUBLE = {
   ],
   image: double,
   price: 325,
+  tax: 32.5,
+  totalPrice: 357.5,
 };

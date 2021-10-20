@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Wrapper,
   AddHeader,
@@ -21,12 +21,6 @@ const Cart = () => {
   const [cart] = useRecoilState(atoms.cart);
   const [showCheckout, setShowCheckout] = useRecoilState(atoms.checkout);
 
-  const getTaxesFees = () => {
-    return cart.price * 0.08;
-  };
-  const getTotal = () => {
-    return cart.price + cart.price * 0.08;
-  };
   const clickCheckout = () => {
     setShowCheckout(true);
   };
@@ -42,10 +36,10 @@ const Cart = () => {
             <span>Cost Per Night:</span> <span>${cart.price}</span>
           </RoomPrice>
           <RoomPrice>
-            <span>Taxes / Fees:</span> <span>${getTaxesFees()}</span>
+            <span>Taxes / Fees:</span> <span>${cart.tax}</span>
           </RoomPrice>
           <RoomPrice>
-            <span>Total:</span> <span>${getTotal()}</span>
+            <span>Total:</span> <span>${cart.totalPrice}</span>
           </RoomPrice>
           <ButtonWrapper>
             <Button

@@ -1,5 +1,35 @@
 import styled from "styled-components";
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
+
+export const Header = styled.h1`
+  margin-top: 0px;
+`;
+
+export const SubHeader = styled.h2`
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+`;
+
+export const ButtonWrapper = styled.div`
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const ErrorField = styled.div`
+  text-align: center;
+  margin-top: 4px;
+  color: red;
+  height: 20px;
+  width: 100%;
+`;
 
 export const CARD_OPTIONS = {
   iconStyle: "solid",

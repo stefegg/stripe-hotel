@@ -30,6 +30,7 @@ export const HeaderOne = styled.h1`
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 12px;
+  cursor: pointer;
 `;
 
 export const SubHeader = styled.p`
