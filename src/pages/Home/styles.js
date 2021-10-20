@@ -7,7 +7,6 @@ export const Body = styled.div`
 `;
 
 export const LeftPane = styled.div`
-  background: red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,5 +17,5 @@ export const LeftPane = styled.div`
 
 export const RightPane = styled.div`
   height: calc(100vh - 100px);
-  background: blue;
+  border-left: 1px solid black;
 `;

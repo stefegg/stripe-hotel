@@ -1,11 +1,71 @@
 import React, { useEffect, useState } from "react";
-
-import { Wrapper } from "./styles";
+import {
+  Wrapper,
+  AddHeader,
+  CartImage,
+  AddWrapper,
+  CartWrapper,
+  CartHeader,
+  RoomTitle,
+  RoomPrice,
+  RoomDetails,
+  RoomImage,
+  ButtonWrapper,
+} from "./styles";
+import { cartPng } from "../../assets";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
+import { Button } from "../index";
+
 const Cart = () => {
   const [cart] = useRecoilState(atoms.cart);
-  return <Wrapper>{cart ? cart.title : "Add an item"}</Wrapper>;
+  const [showCheckout, setShowCheckout] = useRecoilState(atoms.checkout);
+
+  const getTaxesFees = () => {
+    return cart.price * 0.08;
+  };
+  const getTotal = () => {
+    return cart.price + cart.price * 0.08;
+  };
+  const clickCheckout = () => {
+    setShowCheckout(true);
+  };
+  return (
+    <Wrapper>
+      {cart ? (
+        <CartWrapper>
+          <CartHeader>Your selection...</CartHeader>
+          <RoomImage src={cart.image} />
+          <RoomTitle>{cart.title}</RoomTitle>
+          <RoomDetails>5 Star Breakfast Included</RoomDetails>
+          <RoomPrice>
+            <span>Cost Per Night:</span> <span>${cart.price}</span>
+          </RoomPrice>
+          <RoomPrice>
+            <span>Taxes / Fees:</span> <span>${getTaxesFees()}</span>
+          </RoomPrice>
+          <RoomPrice>
+            <span>Total:</span> <span>${getTotal()}</span>
+          </RoomPrice>
+          <ButtonWrapper>
+            <Button
+              width={"100%"}
+              text={"Checkout"}
+              border={"1px solid white"}
+              backgroundColor={"#f6a4eb"}
+              textColor={"white"}
+              onClick={() => clickCheckout()}
+            />
+          </ButtonWrapper>
+        </CartWrapper>
+      ) : (
+        <AddWrapper>
+          <AddHeader>Your cart is empty</AddHeader>
+          <CartImage src={cartPng} />
+        </AddWrapper>
+      )}
+    </Wrapper>
+  );
 };
 
 export default Cart;

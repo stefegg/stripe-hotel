@@ -9,4 +9,8 @@ export default {
     key: "showSiteModal",
     default: null,
   }),
+  checkout: atom({
+    key: "checkout",
+    default: false,
+  }),
 };

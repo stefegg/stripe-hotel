@@ -16,8 +16,6 @@ const OpenPanel = ({ data }) => {
   const { title, image, body, price } = data;
   const [cart, setCart] = useRecoilState(atoms.cart);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
-  console.log(cart, "--------");
-
   const clickAdd = () => {
     if (cart !== null) {
       setShowSiteModal(<CartModal data={data} />);

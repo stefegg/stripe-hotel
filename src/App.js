@@ -1,11 +1,15 @@
 import "./App.css";
-import Home from "./pages/Home";
-import { ModalSite } from "./components";
+import { Home, Checkout } from "./pages";
+import { ModalSite, NavTop } from "./components";
+import { useRecoilState } from "recoil";
+import atoms from "./atoms";
 
 function App() {
+  const [showCheckout] = useRecoilState(atoms.checkout);
   return (
     <div>
-      <Home />
+      <NavTop />
+      {!showCheckout ? <Home /> : <Checkout />}
       <ModalSite />
     </div>
   );
