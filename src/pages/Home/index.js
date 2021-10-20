@@ -13,7 +13,9 @@ const Home = () => {
           <OpenPanel data={FULL} />
           <OpenPanel data={DOUBLE} />
         </LeftPane>
-        <RightPane>{/* <Cart /> */}</RightPane>
+        <RightPane>
+          <Cart />
+        </RightPane>
       </Body>
     </>
   );
