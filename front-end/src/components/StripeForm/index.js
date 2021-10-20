@@ -20,7 +20,7 @@ const StripeForm = () => {
   const [cardError, setCardError] = useState(null);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [cart, setCart] = useRecoilState(atoms.cart);
-  const { totalPrice } = cart;
+  const { totalPrice, title } = cart;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setCardError(null);
@@ -54,6 +54,10 @@ const StripeForm = () => {
     <>
       <Wrapper>
         <Header>Please enter your credit card information</Header>
+        <SubHeader>
+          You will be charged ${totalPrice} for a {title} room at the Stripe
+          Hotel.
+        </SubHeader>
         <SubHeader>
           For testing purposes, enter 4242 4242 4242 4242 424 424 with a valid
           zip code
