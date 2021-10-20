@@ -4,11 +4,15 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+const path = require("path");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cors());
+app.use(express.static(path.join(__dirname, "front-end/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/front-end/build/index.html"));
+});
 
 app.post("/payment", cors(), async (req, res) => {
   let { amount, id } = req.body;
