@@ -23,9 +23,11 @@ export const Body = styled.div`
   padding: 12px;
   display: flex;
   flex-direction: row;
-  background: #e9c697;
+  background: #e6e8ec;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #e6e8ec;
 `;
 
 export const Icon = styled.img`
