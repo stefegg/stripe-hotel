@@ -19,5 +19,5 @@ export const LeftPane = styled.div`
 
 export const RightPane = styled.div`
   height: calc(100vh - 100px);
-  border-left: 1px solid black;
+  background: #e6e8ec;
 `;

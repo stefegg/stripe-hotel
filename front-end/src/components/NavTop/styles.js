@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   overflow: hidden;
   position: relative;
-  border-bottom: 1px solid black;
   background: #5c7eec;
 `;
 
