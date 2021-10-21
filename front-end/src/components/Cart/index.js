@@ -45,9 +45,8 @@ const Cart = () => {
             <Button
               width={"100%"}
               text={"Checkout"}
-              border={"1px solid white"}
               backgroundColor={"#f6a4eb"}
-              textColor={"white"}
+              textColor={"#fff"}
               onClick={() => clickCheckout()}
             />
           </ButtonWrapper>
