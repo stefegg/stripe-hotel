@@ -62,7 +62,7 @@ const StripeForm = () => {
           Hotel.
         </SubHeader>
         <SubHeader>
-          For testing purposes, enter 4242 4242 4242 4242 424 424 with a valid
+          For testing purposes, enter 4242 4242 4242 4242 424 242 with a valid
           zip code
         </SubHeader>
       </Wrapper>

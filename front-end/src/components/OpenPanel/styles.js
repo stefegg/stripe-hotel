@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
-  border: 1px solid black;
   margin: 20px 0px;
   border-radius: 4px;
   background: #fff;
@@ -13,7 +12,7 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #fff;
   padding: 12px;
   background: #5c7eec;
   border-top-left-radius: 3px;
