@@ -23,7 +23,7 @@ const SuccessModal = () => {
           We look forward to seeing you {startDate} - {endDate}
         </p>
         <p>Thank you for booking at the Stripe Hotel!</p>
-        <p> Your card was charged ${totalCost} using Stripe</p>
+        <p> Your card was charged ${totalCost.toFixed(2)} using Stripe</p>
       </Body>
       <ButtonWrapper>
         <Button text={"Awesome!"} width={"100%"} onClick={closeModal} />

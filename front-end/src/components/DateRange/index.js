@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import { Wrapper } from "./styles";
-import { format, formatDistanceStrict } from "date-fns";
+import {
+  format,
+  formatDistanceStrict,
+  differenceInDays,
+  endOfDay,
+} from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import "./date-styles.css";
 import { useRecoilState } from "recoil";
@@ -19,13 +24,12 @@ const DateRange = () => {
   };
   const findNights = (start, end) => {
     if (start && end !== null) {
-      const nightRange = formatDistanceStrict(start, end);
-      const numNights = parseInt(nightRange.slice(0, 1));
+      const stayRange = differenceInDays(endOfDay(end), endOfDay(start));
       setstayLength({
         startDate: format(start, "MMM do yyyy"),
         endDate: format(end, "MMM do yyyy"),
-        numDays: numNights + 1,
-        numNights: numNights,
+        numDays: stayRange + 1,
+        numNights: stayRange,
       });
     } else return;
   };

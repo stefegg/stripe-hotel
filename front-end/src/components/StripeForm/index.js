@@ -21,7 +21,6 @@ const StripeForm = () => {
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [cart, setCart] = useRecoilState(atoms.cart);
   const { totalCost } = cart;
-  console.log(cart, "-----stripe cart");
   const handleSubmit = async (e) => {
     e.preventDefault();
     setCardError(null);

@@ -50,13 +50,13 @@ const Cart = () => {
           </RoomDetails>
           <RoomPrice>
             <span>Room Total for {cart.numNights} nights:</span>
-            <span>${getCost()}</span>
+            <span>${getCost().toFixed(2)}</span>
           </RoomPrice>
           <RoomPrice>
-            <span>Taxes / Fees:</span> <span>${getTax()}</span>
+            <span>Taxes / Fees:</span> <span>${getTax().toFixed(2)}</span>
           </RoomPrice>
           <RoomPrice>
-            <span>Total:</span> <span>${getTotal()}</span>
+            <span>Total:</span> <span>${getTotal().toFixed(2)}</span>
           </RoomPrice>
           <ButtonWrapper>
             <Button
