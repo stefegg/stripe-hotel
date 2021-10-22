@@ -20,7 +20,8 @@ const StripeForm = () => {
   const [cardError, setCardError] = useState(null);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [cart, setCart] = useRecoilState(atoms.cart);
-  const { totalPrice, title } = cart;
+  const { totalCost } = cart;
+  console.log(cart, "-----stripe cart");
   const handleSubmit = async (e) => {
     e.preventDefault();
     setCardError(null);
@@ -32,13 +33,10 @@ const StripeForm = () => {
     if (!error) {
       try {
         const { id } = paymentMethod;
-        const response = await axios.post(
-          "https://stripe-hotel.herokuapp.com/payment",
-          {
-            amount: totalPrice * 100,
-            id,
-          }
-        );
+        const response = await axios.post("/payment", {
+          amount: totalCost * 100,
+          id,
+        });
         if (response.data.success) {
           setShowSiteModal(null);
           console.log("Successful Payment");

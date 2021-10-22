@@ -8,7 +8,7 @@ import {
   DetailItem,
   PriceWrap,
 } from "./styles";
-import { Button, CartModal } from "../index";
+import { Button, CartModal, DatesModal } from "../index";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 
@@ -17,10 +17,10 @@ const OpenPanel = ({ data }) => {
   const [cart, setCart] = useRecoilState(atoms.cart);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const clickAdd = () => {
-    if (cart !== null) {
-      setShowSiteModal(<CartModal data={data} />);
-    } else setCart(data);
+    if (!cart) setShowSiteModal(<DatesModal data={data} />);
+    else setShowSiteModal(<CartModal data={data} />);
   };
+
   return (
     <Wrapper>
       <Header>{title}</Header>
@@ -33,7 +33,7 @@ const OpenPanel = ({ data }) => {
         </DetailWrap>
         <PriceWrap>
           {`$${price}`} per night
-          <Button text={"Add to Cart"} onClick={() => clickAdd()} />
+          <Button text={"Select Dates"} onClick={() => clickAdd()} />
         </PriceWrap>
       </Body>
     </Wrapper>

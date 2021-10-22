@@ -13,8 +13,6 @@ export const roomInfo = [
     ],
     image: king,
     price: 500,
-    tax: 50,
-    totalPrice: 550,
   },
 
   {
@@ -29,8 +27,6 @@ export const roomInfo = [
     ],
     image: queen,
     price: 400,
-    tax: 40,
-    totalPrice: 440,
   },
   {
     title: "Full One Bed",
@@ -44,8 +40,6 @@ export const roomInfo = [
     ],
     image: full,
     price: 350,
-    tax: 35,
-    totalPrice: 385,
   },
   {
     title: "Double Two Bed",
@@ -59,7 +53,5 @@ export const roomInfo = [
     ],
     image: double,
     price: 325,
-    tax: 32.5,
-    totalPrice: 357.5,
   },
 ];

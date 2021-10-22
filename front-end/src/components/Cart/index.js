@@ -17,12 +17,24 @@ import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 import { Button } from "../index";
 
-const Cart = (checkout) => {
-  const [cart] = useRecoilState(atoms.cart);
+const Cart = () => {
+  const [cart, setCart] = useRecoilState(atoms.cart);
   const [showCheckout, setShowCheckout] = useRecoilState(atoms.checkout);
 
   const clickCheckout = () => {
+    const total = { totalCost: getTotal() };
+    const finalCart = { ...cart, ...total };
+    setCart(finalCart);
     setShowCheckout(!showCheckout);
+  };
+  const getCost = () => {
+    return cart.price * cart.numNights;
+  };
+  const getTax = () => {
+    return cart.price * cart.numNights * 0.1;
+  };
+  const getTotal = () => {
+    return cart.price * cart.numNights + cart.price * cart.numNights * 0.1;
   };
   return (
     <Wrapper>
@@ -33,15 +45,18 @@ const Cart = (checkout) => {
           </CartHeader>
           <RoomImage src={cart.image} />
           <RoomTitle>{cart.title}</RoomTitle>
-          <RoomDetails>5 Star Breakfast Included</RoomDetails>
+          <RoomDetails>
+            {cart.startDate} - {cart.endDate}
+          </RoomDetails>
           <RoomPrice>
-            <span>Cost Per Night:</span> <span>${cart.price}</span>
+            <span>Room Total for {cart.numNights} nights:</span>
+            <span>${getCost()}</span>
           </RoomPrice>
           <RoomPrice>
-            <span>Taxes / Fees:</span> <span>${cart.tax}</span>
+            <span>Taxes / Fees:</span> <span>${getTax()}</span>
           </RoomPrice>
           <RoomPrice>
-            <span>Total:</span> <span>${cart.totalPrice}</span>
+            <span>Total:</span> <span>${getTotal()}</span>
           </RoomPrice>
           <ButtonWrapper>
             <Button

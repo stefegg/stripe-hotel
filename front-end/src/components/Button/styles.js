@@ -4,8 +4,15 @@ export const Wrapper = styled.button`
   width: ${({ width }) => (width ? width : "120px")};
   height: ${({ height }) => (height ? height : "40px")};
   color: ${({ textColor }) => (textColor ? textColor : "#fff")};
-  background: ${({ backgroundColor }) =>
-    backgroundColor ? backgroundColor : "#819efc"};
+  background: ${(props) => {
+    if (props.disabled) {
+      return `#e0e0e0`;
+    } else if (props.backgroundColor && !props.disabled) {
+      return props.backgroundColor;
+    } else {
+      return `#5c7eec`;
+    }
+  }};
   outline: none;
   text-decoration: none;
   display: flex;
