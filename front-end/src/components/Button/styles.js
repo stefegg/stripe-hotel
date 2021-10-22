@@ -16,6 +16,7 @@ export const Wrapper = styled.button`
   border: ${({ border }) => (border ? border : "none")};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "4px")};
   padding: ${({ padding }) => (padding ? padding : "0px")};
+  box-shadow: 0px 4px 8px -5px #000000;
   &:hover {
     opacity: 0.7;
   }

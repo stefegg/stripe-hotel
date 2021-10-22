@@ -17,18 +17,20 @@ import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 import { Button } from "../index";
 
-const Cart = () => {
+const Cart = (checkout) => {
   const [cart] = useRecoilState(atoms.cart);
   const [showCheckout, setShowCheckout] = useRecoilState(atoms.checkout);
 
   const clickCheckout = () => {
-    setShowCheckout(true);
+    setShowCheckout(!showCheckout);
   };
   return (
     <Wrapper>
       {cart ? (
         <CartWrapper>
-          <CartHeader>Your selection...</CartHeader>
+          <CartHeader>
+            {showCheckout ? "Your order..." : "Your selection..."}
+          </CartHeader>
           <RoomImage src={cart.image} />
           <RoomTitle>{cart.title}</RoomTitle>
           <RoomDetails>5 Star Breakfast Included</RoomDetails>
@@ -44,7 +46,7 @@ const Cart = () => {
           <ButtonWrapper>
             <Button
               width={"100%"}
-              text={"Checkout"}
+              text={!showCheckout ? "Checkout" : "Modify Order"}
               backgroundColor={"#f6a4eb"}
               textColor={"#fff"}
               onClick={() => clickCheckout()}
