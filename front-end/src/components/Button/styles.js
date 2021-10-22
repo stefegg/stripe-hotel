@@ -18,7 +18,8 @@ export const Wrapper = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font: ${({ font }) => (font ? `${font} sans-serif` : "500 16px sans-serif")};
+  font: ${({ font }) =>
+    font ? `${font} Roboto Condensed` : "500 16px Roboto Condensed"};
   cursor: ${({ disabled }) => (disabled ? "auto" : "pointer")};
   border: ${({ border }) => (border ? border : "none")};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "4px")};
