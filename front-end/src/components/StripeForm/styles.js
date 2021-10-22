@@ -1,26 +1,29 @@
 import styled from "styled-components";
 export const Wrapper = styled.div`
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: 100%;
+  width: 100%;
 `;
 
-export const Header = styled.h1`
+export const Header = styled.span`
+  text-align: start;
   margin-top: 0px;
+  font-size: 18px;
 `;
 
-export const SubHeader = styled.h2`
+export const SubHeader = styled.span`
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 24px;
 `;
 
 export const ButtonWrapper = styled.div`
   margin-top: 12px;
   display: flex;
   justify-content: center;
+  height: 40px;
 `;
 
 export const ErrorField = styled.div`

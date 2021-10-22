@@ -13,4 +13,8 @@ export default {
     key: "checkout",
     default: false,
   }),
+  stayLength: atom({
+    key: "stayLength",
+    default: null,
+  }),
 };

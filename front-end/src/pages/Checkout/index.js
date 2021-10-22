@@ -1,11 +1,16 @@
 import React from "react";
-import { Wrapper } from "./styles";
-import { StripeContainer } from "../../components";
+import { Body, LeftPane, RightPane } from "./styles";
+import { StripeContainer, Cart } from "../../components";
 const Checkout = () => {
   return (
-    <Wrapper>
-      <StripeContainer />
-    </Wrapper>
+    <Body>
+      <LeftPane>
+        <StripeContainer />
+      </LeftPane>
+      <RightPane>
+        <Cart checkout />
+      </RightPane>
+    </Body>
   );
 };
 

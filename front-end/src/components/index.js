@@ -8,6 +8,9 @@ import StripeForm from "./StripeForm";
 import StripeContainer from "./StripeContainer";
 import SuccessModal from "./SuccessModal";
 import LoadingModal from "./LoadingModal";
+import DateRange from "./DateRange";
+import DatesModal from "./DatesModal";
+
 export {
   NavTop,
   OpenPanel,
@@ -19,4 +22,6 @@ export {
   StripeContainer,
   SuccessModal,
   LoadingModal,
+  DateRange,
+  DatesModal,
 };
