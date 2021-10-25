@@ -13,6 +13,7 @@ import axios from "axios";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 import { SuccessModal, LoadingModal } from "..";
+import { useTheme } from "styled-components";
 
 const StripeForm = () => {
   const stripe = useStripe();
@@ -21,6 +22,8 @@ const StripeForm = () => {
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [cart, setCart] = useRecoilState(atoms.cart);
   const { totalCost } = cart;
+  const theme = useTheme();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setCardError(null);
@@ -46,6 +49,7 @@ const StripeForm = () => {
         console.log("Error", error);
       }
     } else {
+      setShowSiteModal(null);
       setCardError(error.message);
       console.log(error.message);
     }
@@ -68,7 +72,7 @@ const StripeForm = () => {
         </fieldset>
         <ErrorField>{cardError && cardError}</ErrorField>
         <ButtonWrapper>
-          <Button text="Pay Now" width={"100%"} />
+          <Button text="Pay Now" width={"100%"} backgroundColor={"#03c51d"} />
         </ButtonWrapper>
       </form>
     </>

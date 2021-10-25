@@ -26,17 +26,17 @@ const CartModal = ({ data }) => {
           text={"Yes"}
           onClick={() => clickYes()}
           width={"150px"}
-          border={"1px solid green"}
-          textColor={"green"}
-          backgroundColor={"white"}
+          border={`1px solid ${theme.colors.goButton}`}
+          textColor={`${theme.colors.goButton}`}
+          backgroundColor={`${theme.colors.tertiaryLight}`}
         />
         <Button
           text={"No"}
           width={"150px"}
           onClick={() => setShowSiteModal(null)}
-          border={"1px solid red"}
-          textColor={"red"}
-          backgroundColor={"white"}
+          border={`1px solid ${theme.colors.headerTextOne}`}
+          textColor={`${theme.colors.headerTextOne}`}
+          backgroundColor={`${theme.colors.tertiaryLight}`}
         />
       </ButtonWrapper>
     </Wrapper>

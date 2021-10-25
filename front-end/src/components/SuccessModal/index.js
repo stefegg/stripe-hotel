@@ -11,9 +11,9 @@ const SuccessModal = () => {
   const [cart, setCart] = useRecoilState(atoms.cart);
   const { title, startDate, endDate, totalCost } = cart;
   const closeModal = () => {
+    setCart(null);
     setShowSiteModal(false);
     setShowCheckout(false);
-    setCart(null);
   };
   const theme = useTheme();
 

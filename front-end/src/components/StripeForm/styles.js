@@ -8,7 +8,9 @@ export const Wrapper = styled.div`
 export const Header = styled.span`
   text-align: start;
   margin-top: 0px;
-  font-size: 18px;
+  font-size: 24px;
+  font-family: Lobster;
+  color: ${({ theme }) => theme.colors.headerTextTwo};
 `;
 
 export const SubHeader = styled.span`
@@ -29,7 +31,7 @@ export const ButtonWrapper = styled.div`
 export const ErrorField = styled.div`
   text-align: center;
   margin-top: 4px;
-  color: red;
+  color: ${({ theme }) => theme.colors.headerTextOne};
   height: 20px;
   width: 100%;
 `;

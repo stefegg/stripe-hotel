@@ -7,6 +7,8 @@ import {
   DetailWrap,
   DetailItem,
   PriceWrap,
+  CostAmount,
+  CostWrap,
 } from "./styles";
 import { Button, CartModal, DatesModal } from "../index";
 import { useRecoilState } from "recoil";
@@ -35,7 +37,9 @@ const OpenPanel = ({ data }) => {
           ))}
         </DetailWrap>
         <PriceWrap>
-          {`$${price}`} per night
+          <CostWrap>
+            <CostAmount>{`$${price}`}</CostAmount> per night
+          </CostWrap>
           <Button text={"Select Dates"} onClick={() => clickAdd()} />
         </PriceWrap>
       </Body>

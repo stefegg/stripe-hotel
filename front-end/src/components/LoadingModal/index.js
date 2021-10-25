@@ -4,7 +4,6 @@ import { useTheme } from "styled-components";
 
 const LoadingModal = () => {
   const theme = useTheme();
-
   return <Wrapper>Processing...</Wrapper>;
 };
 

@@ -6,11 +6,11 @@ export const Wrapper = styled.button`
   color: ${({ textColor }) => (textColor ? textColor : "#fff")};
   background: ${(props) => {
     if (props.disabled) {
-      return `#e0e0e0`;
+      return `${props.theme.colors.headerOne}`;
     } else if (props.backgroundColor && !props.disabled) {
       return props.backgroundColor;
     } else {
-      return `#5c7eec`;
+      return `${props.theme.colors.tertiaryLight}`;
     }
   }};
   outline: none;
