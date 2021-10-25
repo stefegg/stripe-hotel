@@ -22,6 +22,7 @@ export const Header = styled.h1`
 export const Body = styled.div`
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
+  font-size: 18px;
 `;
 
 export const ButtonWrapper = styled.div`
