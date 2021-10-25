@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   width: 100%;
   margin: 20px 0px;
   border-radius: 4px;
-  background: #fff;
 `;
 
 export const Header = styled.div`
@@ -12,18 +11,23 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #fff;
+  border-bottom: ${({ theme }) => `1px solid ${theme.colors.secondary}`};
   padding: 12px;
-  background: #5c7eec;
+  background: ${({ theme }) => theme.colors.headerOne};
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  color: ${({ theme }) => theme.colors.secondary};
+  font-family: Lobster;
+  font-size: 24px;
+  color: ${({ theme }) => theme.colors.headerTextTwo};
 `;
 
 export const Body = styled.div`
   padding: 12px;
   display: flex;
   flex-direction: row;
-  background: #e6e8ec;
+  background: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.secondary};
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
@@ -62,4 +66,19 @@ export const PriceWrap = styled.div`
   width: 30%;
   flex-direction: column;
   align-items: center;
+  font-family: Lobster;
+  color: ${({ theme }) => theme.colors.headerTextTwo};
+`;
+
+export const CostWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const CostAmount = styled.span`
+  font-size: 32px;
+  color: ${({ theme }) => theme.colors.headerTextOne};
+  margin-right: 8px;
+  font-weight: 500;
 `;

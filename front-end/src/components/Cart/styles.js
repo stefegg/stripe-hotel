@@ -15,21 +15,29 @@ export const AddHeader = styled.h1`
   font-size: 24px;
   align-text: center;
   margin-bottom: 24px;
+  font-family: Lobster;
+  color: ${({ theme }) => theme.colors.headerTextTwo};
 `;
 
 export const CartImage = styled.img`
   width: 60%;
   border-radius: 4px;
+  filter: invert(100%) sepia(1%) saturate(3129%) hue-rotate(235deg)
+    brightness(109%) contrast(80%);
 `;
 
 export const CartWrapper = styled.div``;
 
 export const CartHeader = styled.h1`
   font-size: 24px;
+  font-family: Lobster;
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const RoomTitle = styled.p`
-  font-size: 18px;
+  font-size: 24px;
+  font-family: Lobster;
+  color: ${({ theme }) => theme.colors.headerTextOne};
 `;
 
 export const RoomPrice = styled.p`
@@ -37,10 +45,17 @@ export const RoomPrice = styled.p`
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const RoomDetails = styled.p`
   font-style: italic;
+  color: ${({ theme }) => theme.colors.headerTextTwo};
+`;
+
+export const RoomAmount = styled.p`
+  color: ${({ theme }) => theme.colors.headerTextTwo};
+  margin: 0px;
 `;
 
 export const RoomImage = styled.img`

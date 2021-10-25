@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import Style from "../Style";
 
 export default {
   cart: atom({
@@ -16,5 +17,9 @@ export default {
   stayLength: atom({
     key: "stayLength",
     default: null,
+  }),
+  theme: atom({
+    key: "theme",
+    default: Style,
   }),
 };

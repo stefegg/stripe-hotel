@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: #e6e8ec;
+  background: ${({ theme }) => theme.colors.primary};
   height: 65vh;
   width: 65vw;
   border-radius: 8px;
@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  color: ${({ theme }) => theme.colors.secondary};
+  border: ${({ theme }) => `2px solid ${theme.colors.headerTextTwo}`};
 `;
 
 export const ButtonWrapper = styled.div`
@@ -44,14 +46,20 @@ export const Header = styled.span`
   font-weight: 500;
   width: 100%;
   font-style: italic;
+  color: ${({ theme }) => theme.colors.headerTextTwo};
 `;
 
 export const Title = styled.span`
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
+  font-family: Lobster;
+  color: ${({ theme }) => theme.colors.headerTextOne};
+  margin-bottom: 24px;
 `;
 
-export const Details = styled.span``;
+export const Details = styled.span`
+  margin-bottom: 14px;
+`;
 
 export const DataImage = styled.img`
   max-width: 85%;

@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const Body = styled.div`
   display: grid;
   grid-template-columns: 7fr 3fr;
-  height: calc(100vh - 100px);
-  background: #d9ddee;
+  height: calc(100vh - 99px);
+  background: ${({ theme }) => theme.colors.tertiaryLight};
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const LeftPane = styled.div`
@@ -18,6 +19,6 @@ export const LeftPane = styled.div`
 `;
 
 export const RightPane = styled.div`
-  height: calc(100vh - 100px);
-  background: #e6e8ec;
+  height: calc(100vh - 99px);
+  background: ${({ theme }) => theme.colors.headerOne};
 `;

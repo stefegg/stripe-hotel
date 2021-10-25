@@ -11,6 +11,7 @@ import {
   RoomDetails,
   RoomImage,
   ButtonWrapper,
+  RoomAmount,
 } from "./styles";
 import { cartPng } from "../../assets";
 import { useRecoilState } from "recoil";
@@ -50,20 +51,22 @@ const Cart = () => {
           </RoomDetails>
           <RoomPrice>
             <span>Room Total for {cart.numNights} nights:</span>
-            <span>${getCost().toFixed(2)}</span>
+            <RoomAmount>${getCost().toFixed(2)}</RoomAmount>
           </RoomPrice>
           <RoomPrice>
-            <span>Taxes / Fees:</span> <span>${getTax().toFixed(2)}</span>
+            <span>Taxes / Fees:</span>{" "}
+            <RoomAmount>${getTax().toFixed(2)}</RoomAmount>
           </RoomPrice>
           <RoomPrice>
-            <span>Total:</span> <span>${getTotal().toFixed(2)}</span>
+            <span>Total:</span>{" "}
+            <RoomAmount>${getTotal().toFixed(2)}</RoomAmount>
           </RoomPrice>
           <ButtonWrapper>
             <Button
               width={"100%"}
               text={!showCheckout ? "Checkout" : "Modify Order"}
-              backgroundColor={"#f6a4eb"}
-              textColor={"#fff"}
+              backgroundColor={!showCheckout ? "#03c51d" : "#ffdd00"}
+              textColor={!showCheckout ? "#E5E5E5" : "#33435B"}
               onClick={() => clickCheckout()}
             />
           </ButtonWrapper>

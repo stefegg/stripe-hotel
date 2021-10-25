@@ -8,7 +8,9 @@ export const Wrapper = styled.div`
 export const Header = styled.span`
   text-align: start;
   margin-top: 0px;
-  font-size: 18px;
+  font-size: 24px;
+  font-family: Lobster;
+  color: ${({ theme }) => theme.colors.headerTextTwo};
 `;
 
 export const SubHeader = styled.span`
@@ -29,7 +31,7 @@ export const ButtonWrapper = styled.div`
 export const ErrorField = styled.div`
   text-align: center;
   margin-top: 4px;
-  color: red;
+  color: ${({ theme }) => theme.colors.headerTextOne};
   height: 20px;
   width: 100%;
 `;
@@ -38,18 +40,18 @@ export const CARD_OPTIONS = {
   iconStyle: "solid",
   style: {
     base: {
-      iconColor: "#c4f0ff",
-      color: "#fff",
+      iconColor: "#E5E5E5",
+      color: `#e5e5e5`,
       fontWeight: 500,
       fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
       fontSize: "16px",
       fontSmoothing: "antialiased",
       ":-webkit-autofill": { color: "#fce883" },
-      "::placeholder": { color: "#87bbfd" },
+      "::placeholder": { color: "#ffdd00" },
     },
     invalid: {
-      iconColor: "#ffc7ee",
-      color: "#ffc7ee",
+      iconColor: "#cd0909",
+      color: "#cd0909",
     },
   },
 };

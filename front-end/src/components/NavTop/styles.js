@@ -10,18 +10,27 @@ export const Wrapper = styled.div`
   justify-content: center;
   overflow: hidden;
   position: relative;
-  background: #5c7eec;
+  background: ${({ theme }) => theme.colors.primary};
 `;
 
 export const HeaderOne = styled.h1`
   margin: 0px;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
   margin-bottom: 12px;
   cursor: pointer;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
+export const HeaderPrimary = styled.span`
+  font-size: 32px;
+  color: ${({ theme }) => theme.colors.headerTextOne};
+  font-family: Lobster;
+  margin-right: 8px;
 `;
 
 export const SubHeader = styled.p`
   margin: 0px;
   font-style: italic;
+  color: ${({ theme }) => theme.colors.headerTextTwo};
 `;

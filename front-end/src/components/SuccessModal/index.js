@@ -3,6 +3,7 @@ import { Wrapper, Header, Body, ButtonWrapper } from "./styles";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 import { Button } from "..";
+import { useTheme } from "styled-components";
 
 const SuccessModal = () => {
   const [showCheckout, setShowCheckout] = useRecoilState(atoms.checkout);
@@ -10,10 +11,12 @@ const SuccessModal = () => {
   const [cart, setCart] = useRecoilState(atoms.cart);
   const { title, startDate, endDate, totalCost } = cart;
   const closeModal = () => {
+    setCart(null);
     setShowSiteModal(false);
     setShowCheckout(false);
-    setCart(null);
   };
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <Header>Congratulations!</Header>
