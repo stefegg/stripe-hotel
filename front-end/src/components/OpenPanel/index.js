@@ -11,11 +11,14 @@ import {
 import { Button, CartModal, DatesModal } from "../index";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
+import { useTheme } from "styled-components";
 
 const OpenPanel = ({ data }) => {
   const { title, image, body, price } = data;
   const [cart, setCart] = useRecoilState(atoms.cart);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
+  const theme = useTheme();
+
   const clickAdd = () => {
     if (!cart) setShowSiteModal(<DatesModal data={data} />);
     else setShowSiteModal(<CartModal data={data} />);

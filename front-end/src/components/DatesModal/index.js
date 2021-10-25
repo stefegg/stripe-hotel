@@ -12,11 +12,15 @@ import {
 } from "./styles";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
+import { useTheme } from "styled-components";
+
 const DatesModal = ({ data }) => {
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [stayLength, setstayLength] = useRecoilState(atoms.stayLength);
   const [cart, setCart] = useRecoilState(atoms.cart);
   const { title, image, price } = data;
+  const theme = useTheme();
+
   const clickContinue = () => {
     setShowSiteModal(null);
     addLength();

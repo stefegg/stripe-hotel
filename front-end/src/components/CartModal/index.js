@@ -3,14 +3,18 @@ import { Button, DatesModal } from "../index";
 import { Wrapper, Body, ButtonWrapper } from "./styles";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
+import { useTheme } from "styled-components";
 
 const CartModal = ({ data }) => {
   const [cart, setCart] = useRecoilState(atoms.cart);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
+  const theme = useTheme();
+
   const clickYes = () => {
     setCart(null);
     setShowSiteModal(<DatesModal data={data} />);
   };
+
   return (
     <Wrapper>
       <Body>
