@@ -8,7 +8,6 @@ import { ThemeProvider } from "styled-components";
 function App() {
   const [showCheckout] = useRecoilState(atoms.checkout);
   const [theme] = useRecoilState(atoms.theme);
-  console.log(theme, "----app theme");
   return (
     <ThemeProvider theme={theme}>
       <div>
