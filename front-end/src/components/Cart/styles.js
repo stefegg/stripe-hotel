@@ -16,12 +16,14 @@ export const AddHeader = styled.h1`
   align-text: center;
   margin-bottom: 24px;
   font-family: Lobster;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.headerTextTwo};
 `;
 
 export const CartImage = styled.img`
   width: 60%;
   border-radius: 4px;
+  filter: invert(100%) sepia(1%) saturate(3129%) hue-rotate(235deg)
+    brightness(109%) contrast(80%);
 `;
 
 export const CartWrapper = styled.div``;
