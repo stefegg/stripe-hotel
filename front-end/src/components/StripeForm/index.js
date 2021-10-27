@@ -44,7 +44,6 @@ const StripeForm = () => {
     validateOnBlur: true,
     validationSchema: validationSchema,
   });
-  console.log(Object.keys(stripeFormik.touched).length, "-------str");
   const handleSubmit = async (e) => {
     e.preventDefault();
     setCardError(null);
