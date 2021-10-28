@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 375px;
-  width: 450px;
+  height: 58vh;
+  width: 45vw;
   background: ${({ theme }) => theme.colors.tertiary};
   border-radius: 4px;
   overflow: hidden;

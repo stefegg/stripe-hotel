@@ -44,6 +44,7 @@ export const Icon = styled.img`
 export const RoomImage = styled.img`
   width: 250px;
   max-heigth: 166px;
+  cursor: pointer;
 `;
 
 export const DetailWrap = styled.ul`

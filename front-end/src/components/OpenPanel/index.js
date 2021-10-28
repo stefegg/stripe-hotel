@@ -10,7 +10,7 @@ import {
   CostAmount,
   CostWrap,
 } from "./styles";
-import { Button, CartModal, DatesModal } from "../index";
+import { Button, CartModal, DatesModal, ImageModal } from "../index";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 import { useTheme } from "styled-components";
@@ -30,7 +30,10 @@ const OpenPanel = ({ data }) => {
     <Wrapper>
       <Header>{title}</Header>
       <Body>
-        <RoomImage src={image} />
+        <RoomImage
+          src={image}
+          onClick={() => setShowSiteModal(<ImageModal data={data} />)}
+        />
         <DetailWrap>
           {body.map((item, idx) => (
             <DetailItem key={idx}>{item}</DetailItem>
