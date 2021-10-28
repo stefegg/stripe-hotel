@@ -9,11 +9,13 @@ const SuccessModal = () => {
   const [showCheckout, setShowCheckout] = useRecoilState(atoms.checkout);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [cart, setCart] = useRecoilState(atoms.cart);
+  const [showCart, setShowCart] = useRecoilState(atoms.showCart);
   const { title, startDate, endDate, totalCost } = cart;
   const closeModal = () => {
     setCart(null);
     setShowSiteModal(false);
     setShowCheckout(false);
+    setShowCart(false);
   };
   const theme = useTheme();
 

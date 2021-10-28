@@ -4,18 +4,18 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  height: 99px;
-  padding: 0px 20px;
+  height: 110px;
+  padding: 0px 32px;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  position: relative;
   background: ${({ theme }) => theme.colors.primary};
+  position: relative;
 `;
 
 export const HeaderOne = styled.h1`
   margin: 0px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   margin-bottom: 12px;
   cursor: pointer;
@@ -23,14 +23,62 @@ export const HeaderOne = styled.h1`
 `;
 
 export const HeaderPrimary = styled.span`
-  font-size: 32px;
+  font-size: 36px;
   color: ${({ theme }) => theme.colors.headerTextOne};
   font-family: Lobster;
   margin-right: 8px;
+`;
+
+export const SubHeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 `;
 
 export const SubHeader = styled.p`
   margin: 0px;
   font-style: italic;
   color: ${({ theme }) => theme.colors.headerTextTwo};
+`;
+
+export const UtilWrapper = styled.div`
+  position: fixed;
+  right: 36px;
+  top: 48px;
+`;
+
+export const UtilIcon = styled.img`
+  margin: 0px;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+  filter: invert(83%) sepia(34%) saturate(1647%) hue-rotate(359deg)
+    brightness(103%) contrast(104%);
+  &:last-child {
+    filter: ${({ cart }) =>
+      cart
+        ? `invert(47%) sepia(23%) saturate(3776%) hue-rotate(94deg)
+      brightness(105%) contrast(98%)`
+        : `invert(83%) sepia(34%) saturate(1647%) hue-rotate(359deg)
+      brightness(103%) contrast(104%)`};
+  }
+  &:hover {
+    filter: invert(47%) sepia(23%) saturate(3776%) hue-rotate(94deg)
+      brightness(105%) contrast(98%);
+  }
+  &:first-child {
+    margin-right: 24px;
+  }
+`;
+
+export const Notification = styled.div`
+  height: 12px;
+  width: 12px;
+  background: red;
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  border-radius: 25px;
+  color: ${({ theme }) => theme.colors.secondary};
 `;

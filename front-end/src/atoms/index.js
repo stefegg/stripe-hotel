@@ -22,4 +22,8 @@ export default {
     key: "theme",
     default: Style,
   }),
+  showCart: atom({
+    key: "showCart",
+    default: false,
+  }),
 };

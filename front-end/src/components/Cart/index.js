@@ -12,6 +12,7 @@ import {
   RoomImage,
   ButtonWrapper,
   RoomAmount,
+  UtilIcon,
 } from "./styles";
 import { cartPng } from "../../assets";
 import { useRecoilState } from "recoil";
@@ -21,6 +22,7 @@ import { Button } from "../index";
 const Cart = () => {
   const [cart, setCart] = useRecoilState(atoms.cart);
   const [showCheckout, setShowCheckout] = useRecoilState(atoms.checkout);
+  const [showCart, setShowCart] = useRecoilState(atoms.showCart);
 
   const clickCheckout = () => {
     const total = { totalCost: getTotal() };
@@ -73,7 +75,10 @@ const Cart = () => {
         </CartWrapper>
       ) : (
         <AddWrapper>
-          <AddHeader>Your cart is empty</AddHeader>
+          <AddHeader>
+            Your cart is empty
+            <UtilIcon onClick={() => setShowCart(false)}>X</UtilIcon>
+          </AddHeader>
           <CartImage src={cartPng} />
         </AddWrapper>
       )}

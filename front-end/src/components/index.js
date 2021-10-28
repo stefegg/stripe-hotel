@@ -10,6 +10,8 @@ import SuccessModal from "./SuccessModal";
 import LoadingModal from "./LoadingModal";
 import DateRange from "./DateRange";
 import DatesModal from "./DatesModal";
+import InputField from "./InputField";
+import LoginModal from "./LoginModal";
 
 export {
   NavTop,
@@ -24,4 +26,6 @@ export {
   LoadingModal,
   DateRange,
   DatesModal,
+  InputField,
+  LoginModal,
 };
