@@ -16,7 +16,7 @@ import atoms from "../../atoms";
 import { useTheme } from "styled-components";
 
 const OpenPanel = ({ data }) => {
-  const { title, image, body, price } = data;
+  const { title, body, price, images, id } = data;
   const [cart, setCart] = useRecoilState(atoms.cart);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const theme = useTheme();
@@ -31,7 +31,7 @@ const OpenPanel = ({ data }) => {
       <Header>{title}</Header>
       <Body>
         <RoomImage
-          src={image}
+          src={images[id]}
           onClick={() => setShowSiteModal(<ImageModal data={data} />)}
         />
         <DetailWrap>
