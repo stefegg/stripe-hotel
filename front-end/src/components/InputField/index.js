@@ -30,6 +30,7 @@ const InputField = ({
         inputWidth={inputWidth}
       >
         <Input
+          autoComplete="nope"
           inputHeight={inputHeight}
           inputWidth={inputWidth}
           onFocus={() => setFocused(true)}

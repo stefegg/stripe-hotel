@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: 24px 24px;
+  padding: 12px 24px;
 `;
 
 export const AddWrapper = styled.div`
@@ -17,6 +17,9 @@ export const AddHeader = styled.h1`
   margin-bottom: 24px;
   font-family: Lobster;
   color: ${({ theme }) => theme.colors.headerTextTwo};
+  display: flex;
+  align-items: center;
+  position: relatve;
 `;
 
 export const CartImage = styled.img`
@@ -40,11 +43,12 @@ export const RoomTitle = styled.p`
   color: ${({ theme }) => theme.colors.headerTextOne};
 `;
 
-export const RoomPrice = styled.p`
+export const RoomPrice = styled.span`
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  margin: 1em 0;
   color: ${({ theme }) => theme.colors.secondary};
 `;
 
@@ -65,4 +69,27 @@ export const RoomImage = styled.img`
 
 export const ButtonWrapper = styled.div`
   margin-top: 24px;
+`;
+
+export const UtilIcon = styled.div`
+display: flex;
+  margin: 0px;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  border: ${({ theme }) => `1px solid ${theme.colors.headerTextTwo}`};
+  font-family: Roboto Condensed;
+  color: ${({ theme }) => theme.colors.headerTextTwo}};
+  &:hover {
+    color: ${({ theme }) => theme.colors.headerTextOne};
+  border: ${({ theme }) => `1px solid ${theme.colors.headerTextOne}`};
+
+  }
+  font-size: 14px;
+  right: 28px;
+  border-radius: 25px;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
 `;

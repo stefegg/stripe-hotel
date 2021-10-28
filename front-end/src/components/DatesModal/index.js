@@ -18,10 +18,12 @@ const DatesModal = ({ data }) => {
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [stayLength, setstayLength] = useRecoilState(atoms.stayLength);
   const [cart, setCart] = useRecoilState(atoms.cart);
+  const [showCart, setShowCart] = useRecoilState(atoms.showCart);
   const { title, image, price } = data;
   const theme = useTheme();
 
   const clickContinue = () => {
+    setShowCart(true);
     setShowSiteModal(null);
     addLength();
   };
@@ -36,7 +38,6 @@ const DatesModal = ({ data }) => {
         <InnerBody>
           <Title>{title}</Title>
           <Details>${price} /per night</Details>
-
           <DataImage src={image} />
         </InnerBody>
         <InnerBody>

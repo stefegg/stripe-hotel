@@ -201,7 +201,7 @@ const StripeForm = () => {
             width={"100%"}
             backgroundColor={"#03c51d"}
             disabled={
-              Object.keys(stripeFormik.touched).length <= 7 ||
+              Object.keys(stripeFormik.touched).length < 7 ||
               Object.keys(stripeFormik.errors).length > 0
             }
           />
