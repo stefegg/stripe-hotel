@@ -43,6 +43,7 @@ export const ButtonWrapper = styled.div`
 export const Create = styled.span`
   cursor: pointer;
   color: ${({ theme }) => theme.colors.headerTextTwo};
+  margin-left: 6px;
   &:hover {
     color: ${({ theme }) => theme.colors.goButton};
   }
@@ -61,7 +62,9 @@ export const Icon = styled.div`
   justify-content: center;
   border-radius: 50px;
   cursor: pointer;
+  border: ${({ theme }) => `1px solid ${theme.colors.headerTextTwo}`};
   &:hover {
     color: ${({ theme }) => theme.colors.headerTextOne};
+    border: ${({ theme }) => `1px solid ${theme.colors.headerTextOne}`};
   }
 `;

@@ -6,20 +6,17 @@ import {
   SubHeader,
   ButtonWrapper,
   ErrorField,
-  DoubleRow,
-  BillingInfo,
   SingleRow,
-  PostalRow,
 } from "./styles";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { Button } from "..";
+import { Button, AddressForm } from "..";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 import { SuccessModal, LoadingModal, InputField } from "..";
 import { useTheme } from "styled-components";
 import { useFormik } from "formik";
-import { validationSchema } from "./validation";
+import { billingSchema } from "../../validations";
 
 const StripeForm = () => {
   const stripe = useStripe();
@@ -42,7 +39,7 @@ const StripeForm = () => {
     },
     validateOnChange: false,
     validateOnBlur: true,
-    validationSchema: validationSchema,
+    validationSchema: billingSchema,
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -74,6 +71,21 @@ const StripeForm = () => {
       console.log(error.message);
     }
   };
+  const checkDisabled = () => {
+    if (Object.keys(stripeFormik.errors).length > 0) {
+      return true;
+    } else if (
+      stripeFormik.values.email.length < 1 ||
+      stripeFormik.values.firstName.length < 1 ||
+      stripeFormik.values.lastName.length < 1 ||
+      stripeFormik.values.addressOne.length < 1 ||
+      stripeFormik.values.addressCity.length < 1 ||
+      stripeFormik.values.addressState.length < 1 ||
+      stripeFormik.values.addressPostal.length < 1
+    )
+      return true;
+    else return false;
+  };
   return (
     <>
       <form
@@ -82,105 +94,17 @@ const StripeForm = () => {
         onSubmit={handleSubmit}
       >
         <Header>Please enter your billing information</Header>
-        <BillingInfo>
-          <SingleRow>
-            <InputField
-              label={"E-mail address"}
-              value={stripeFormik.values.email}
-              onChange={stripeFormik.handleChange("email")}
-              onBlur={stripeFormik.handleBlur("email")}
-              borderColor={theme.colors.goButton}
-              error={stripeFormik.touched.email && stripeFormik.errors.email}
-              type={"email"}
-            />
-          </SingleRow>
-          <DoubleRow>
-            <InputField
-              label={"First Name"}
-              value={stripeFormik.values.firstName}
-              onChange={stripeFormik.handleChange("firstName")}
-              onBlur={stripeFormik.handleBlur("firstName")}
-              borderColor={theme.colors.goButton}
-              error={
-                stripeFormik.touched.firstName && stripeFormik.errors.firstName
-              }
-            />
-            <InputField
-              label={"Last Name"}
-              value={stripeFormik.values.lastName}
-              onChange={stripeFormik.handleChange("lastName")}
-              onBlur={stripeFormik.handleBlur("lastName")}
-              borderColor={theme.colors.goButton}
-              error={
-                stripeFormik.touched.lastName && stripeFormik.errors.lastName
-              }
-            />
-          </DoubleRow>
-          <SingleRow>
-            <InputField
-              label={"Street Address"}
-              value={stripeFormik.values.addressOne}
-              onChange={stripeFormik.handleChange("addressOne")}
-              onBlur={stripeFormik.handleBlur("addressOne")}
-              borderColor={theme.colors.goButton}
-              error={
-                stripeFormik.touched.addressOne &&
-                stripeFormik.errors.addressOne
-              }
-            />
-          </SingleRow>
-          <SingleRow>
-            <InputField
-              label={"Apt #, Floor, etc. (optional)"}
-              value={stripeFormik.values.addressTwo}
-              onChange={stripeFormik.handleChange("addressTwo")}
-              onBlur={stripeFormik.handleBlur("addressTwo")}
-              borderColor={theme.colors.goButton}
-              error={
-                stripeFormik.touched.addressTwo &&
-                stripeFormik.errors.addressTwo
-              }
-            />
-          </SingleRow>
-          <DoubleRow>
-            <InputField
-              label={"City "}
-              value={stripeFormik.values.addressCity}
-              onChange={stripeFormik.handleChange("addressCity")}
-              onBlur={stripeFormik.handleBlur("addressCity")}
-              borderColor={theme.colors.goButton}
-              error={
-                stripeFormik.touched.addressCity &&
-                stripeFormik.errors.addressCity
-              }
-            />
-            <InputField
-              label={"State"}
-              value={stripeFormik.values.addressState}
-              onChange={stripeFormik.handleChange("addressState")}
-              onBlur={stripeFormik.handleBlur("addressState")}
-              borderColor={theme.colors.goButton}
-              error={
-                stripeFormik.touched.addressState &&
-                stripeFormik.errors.addressState
-              }
-            />
-          </DoubleRow>
-          <PostalRow>
-            <InputField
-              label={"Postal Code"}
-              value={stripeFormik.values.addressPostal}
-              onChange={stripeFormik.handleChange("addressPostal")}
-              onBlur={stripeFormik.handleBlur("addressPostal")}
-              borderColor={theme.colors.goButton}
-              error={
-                stripeFormik.touched.addressPostal &&
-                stripeFormik.errors.addressPostal
-              }
-              inputWidth={"50%"}
-            />
-          </PostalRow>
-        </BillingInfo>
+        <SingleRow>
+          <InputField
+            label={"E-mail address"}
+            value={stripeFormik.values.email}
+            onChange={stripeFormik.handleChange("email")}
+            onBlur={stripeFormik.handleBlur("email")}
+            borderColor={theme.colors.goButton}
+            error={stripeFormik.touched.email && stripeFormik.errors.email}
+          />
+        </SingleRow>
+        <AddressForm formik={stripeFormik} />
         <Wrapper>
           <Header>Please enter your credit card information</Header>
 
@@ -199,11 +123,8 @@ const StripeForm = () => {
           <Button
             text="Pay Now"
             width={"100%"}
-            backgroundColor={"#03c51d"}
-            disabled={
-              Object.keys(stripeFormik.touched).length < 7 ||
-              Object.keys(stripeFormik.errors).length > 0
-            }
+            backgroundColor={theme.colors.goButton}
+            disabled={checkDisabled()}
           />
         </ButtonWrapper>
       </form>

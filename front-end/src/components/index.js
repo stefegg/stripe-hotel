@@ -13,6 +13,8 @@ import DatesModal from "./DatesModal";
 import InputField from "./InputField";
 import LoginModal from "./LoginModal";
 import ImageModal from "./ImageModal";
+import SignUpForm from "./SignUpForm";
+import AddressForm from "./AddressForm";
 
 export {
   NavTop,
@@ -30,4 +32,6 @@ export {
   InputField,
   LoginModal,
   ImageModal,
+  SignUpForm,
+  AddressForm,
 };
