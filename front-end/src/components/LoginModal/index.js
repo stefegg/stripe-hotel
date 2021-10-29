@@ -34,7 +34,7 @@ const LoginModal = () => {
     if (Object.keys(loginFormik.errors).length > 0) {
       return true;
     } else if (
-      loginFormik.values.email.length < 1 &&
+      loginFormik.values.email.length < 1 ||
       loginFormik.values.password.length < 1
     ) {
       return true;
@@ -74,7 +74,7 @@ const LoginModal = () => {
             disabled={checkDisabled()}
           />
           <Footer>
-            Don't have an account?{" "}
+            Don't have an account?
             <Create onClick={() => clickCreate()}>
               Click here to create one
             </Create>

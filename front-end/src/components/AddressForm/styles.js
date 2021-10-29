@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const BillingInfo = styled.div`
   margin-top: 12px;
   margin-bottom: 12px;
+  width: 100%;
 `;
 
 export const DoubleRow = styled.div`

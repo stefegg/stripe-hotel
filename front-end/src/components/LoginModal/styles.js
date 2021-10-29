@@ -43,6 +43,7 @@ export const ButtonWrapper = styled.div`
 export const Create = styled.span`
   cursor: pointer;
   color: ${({ theme }) => theme.colors.headerTextTwo};
+  margin-left: 6px;
   &:hover {
     color: ${({ theme }) => theme.colors.goButton};
   }

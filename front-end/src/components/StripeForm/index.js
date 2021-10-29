@@ -75,12 +75,12 @@ const StripeForm = () => {
     if (Object.keys(stripeFormik.errors).length > 0) {
       return true;
     } else if (
-      stripeFormik.values.email.length < 1 &&
-      stripeFormik.values.firstName.length < 1 &&
-      stripeFormik.values.lastName.length < 1 &&
-      stripeFormik.values.addressOne.length < 1 &&
-      stripeFormik.values.addressCity.length < 1 &&
-      stripeFormik.values.addressState.length < 1 &&
+      stripeFormik.values.email.length < 1 ||
+      stripeFormik.values.firstName.length < 1 ||
+      stripeFormik.values.lastName.length < 1 ||
+      stripeFormik.values.addressOne.length < 1 ||
+      stripeFormik.values.addressCity.length < 1 ||
+      stripeFormik.values.addressState.length < 1 ||
       stripeFormik.values.addressPostal.length < 1
     )
       return true;
