@@ -26,4 +26,8 @@ export default {
     key: "showCart",
     default: false,
   }),
+  signUp: atom({
+    key: "showSingUp",
+    default: false,
+  }),
 };

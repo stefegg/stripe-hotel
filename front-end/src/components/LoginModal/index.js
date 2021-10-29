@@ -19,6 +19,8 @@ import { loginSchema } from "../../validations";
 const LoginModal = () => {
   const theme = useTheme();
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
+  const [showSignUp, setShowSignUp] = useRecoilState(atoms.signUp);
+
   const loginFormik = useFormik({
     initialValues: {
       email: "",
@@ -37,6 +39,10 @@ const LoginModal = () => {
     ) {
       return true;
     } else return false;
+  };
+  const clickCreate = () => {
+    setShowSiteModal(null);
+    setShowSignUp(true);
   };
   return (
     <Wrapper>
@@ -68,7 +74,10 @@ const LoginModal = () => {
             disabled={checkDisabled()}
           />
           <Footer>
-            Don't have an account? <Create>Click here to create one</Create>
+            Don't have an account?{" "}
+            <Create onClick={() => clickCreate()}>
+              Click here to create one
+            </Create>
           </Footer>
         </ButtonWrapper>
       </Body>

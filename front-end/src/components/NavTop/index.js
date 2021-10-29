@@ -19,11 +19,16 @@ const NavTop = () => {
   const [showCheckout, setShowCheckout] = useRecoilState(atoms.checkout);
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   const [showCart, setShowCart] = useRecoilState(atoms.showCart);
+  const [showSignUp, setShowSignUp] = useRecoilState(atoms.signUp);
   const [cart, setCart] = useRecoilState(atoms.cart);
   const theme = useTheme();
+  const clickLogo = () => {
+    setShowCheckout(false);
+    setShowSignUp(false);
+  };
   return (
     <Wrapper>
-      <HeaderOne onClick={() => setShowCheckout(false)}>
+      <HeaderOne onClick={() => clickLogo()}>
         <HeaderPrimary>Stripe</HeaderPrimary> H O T E L
         <UtilWrapper>
           <UtilIcon

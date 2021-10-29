@@ -1,4 +1,4 @@
 import Home from "./Home";
 import Checkout from "./Checkout";
-
-export { Home, Checkout };
+import SignUp from "./SignUp";
+export { Home, Checkout, SignUp };
