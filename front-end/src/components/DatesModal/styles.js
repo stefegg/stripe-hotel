@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   color: ${({ theme }) => theme.colors.secondary};
-  border: ${({ theme }) => `2px solid ${theme.colors.headerTextTwo}`};
+  border: ${({ theme }) => `1px solid ${theme.colors.secondary}`};
 `;
 
 export const ButtonWrapper = styled.div`

@@ -12,6 +12,7 @@ import DateRange from "./DateRange";
 import DatesModal from "./DatesModal";
 import InputField from "./InputField";
 import LoginModal from "./LoginModal";
+import ImageModal from "./ImageModal";
 
 export {
   NavTop,
@@ -28,4 +29,5 @@ export {
   DatesModal,
   InputField,
   LoginModal,
+  ImageModal,
 };

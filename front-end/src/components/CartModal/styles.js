@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 450px;
-  background: ${({ theme }) => theme.colors.secondary};
+  width: 42vw;
+  background: ${({ theme }) => theme.colors.tertiary};
   border-radius: 4px;
   padding: 20px;
+  border: ${({ theme }) => `1px solid ${theme.colors.secondary}`};
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const Body = styled.div`

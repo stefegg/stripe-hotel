@@ -41,4 +41,5 @@ export const Input = styled.input`
   padding-left: 6px;
   width: calc(100% - 8px);
   height: ${({ inputHeight }) => (inputHeight ? inputHeight : "30px")};
+  box-shadow: 0px 3px 4px 0px #363636;
 `;
