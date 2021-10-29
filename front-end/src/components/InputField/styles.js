@@ -23,13 +23,13 @@ export const InputWrapper = styled.div`
   border-radius: 4px;
   border: ${({ focused, theme, borderColor, error }) => {
     if (borderColor && !focused && !error) {
-      return `1px solid ${theme.colors.tertiary}`;
+      return `2px solid ${theme.colors.tertiary}`;
     }
     if (focused && borderColor) {
-      return `1px solid ${borderColor}`;
+      return `2px solid ${borderColor}`;
     }
     if (!focused && error) {
-      return `1px solid ${theme.colors.headerTextOne}`;
+      return `2px solid ${theme.colors.headerTextOne}`;
     }
   }};
 `;
@@ -41,5 +41,5 @@ export const Input = styled.input`
   padding-left: 6px;
   width: calc(100% - 8px);
   height: ${({ inputHeight }) => (inputHeight ? inputHeight : "30px")};
-  box-shadow: 0px 3px 4px 0px #363636;
+  filter: drop-shadow(0px 0px 4px #363636);
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   height: 350px;
   width: 450px;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.headerTextTwo};
   background: ${({ theme }) => theme.colors.tertiary};
   font-size: 32px;
   display: flex;
@@ -11,5 +11,5 @@ export const Wrapper = styled.div`
   justify-content: center;
   border-radius: 4px;
   font-family: Lobster;
-  border: ${({ theme }) => `2px solid ${theme.colors.headerTextTwo}`};
+  border: ${({ theme }) => `1px solid ${theme.colors.secondary}`};
 `;

@@ -61,7 +61,9 @@ export const Icon = styled.div`
   justify-content: center;
   border-radius: 50px;
   cursor: pointer;
+  border: ${({ theme }) => `1px solid ${theme.colors.headerTextTwo}`};
   &:hover {
     color: ${({ theme }) => theme.colors.headerTextOne};
+    border: ${({ theme }) => `1px solid ${theme.colors.headerTextOne}`};
   }
 `;

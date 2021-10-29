@@ -75,7 +75,8 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const UtilIcon = styled.div`
-display: flex;
+  background-color: ${({ theme }) => theme.colors.tertiaryLight};
+  display: flex;
   margin: 0px;
   cursor: pointer;
   height: 24px;
@@ -86,8 +87,7 @@ display: flex;
   color: ${({ theme }) => theme.colors.headerTextTwo}};
   &:hover {
     color: ${({ theme }) => theme.colors.headerTextOne};
-  border: ${({ theme }) => `1px solid ${theme.colors.headerTextOne}`};
-
+    border: ${({ theme }) => `1px solid ${theme.colors.headerTextOne}`};
   }
   font-size: 14px;
   right: 28px;
