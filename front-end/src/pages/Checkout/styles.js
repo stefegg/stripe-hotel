@@ -20,5 +20,5 @@ export const LeftPane = styled.div`
 
 export const RightPane = styled.div`
   height: calc(100vh - 110px);
-  background: ${({ theme }) => theme.colors.headerOne};
+  background: ${({ theme }) => theme.colors.tertiary};
 `;

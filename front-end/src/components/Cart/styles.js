@@ -35,12 +35,15 @@ export const CartHeader = styled.h1`
   font-size: 24px;
   font-family: Lobster;
   color: ${({ theme }) => theme.colors.secondary};
+  text-shadow: 2px 2px #000;
 `;
 
 export const RoomTitle = styled.p`
   font-size: 24px;
   font-family: Lobster;
   color: ${({ theme }) => theme.colors.headerTextOne};
+  text-shadow: 1px 1px #000;
+  text-align: center;
 `;
 
 export const RoomPrice = styled.span`

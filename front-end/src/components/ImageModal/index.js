@@ -11,18 +11,21 @@ import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 
 const ImageModal = ({ data }) => {
-  console.log(data, "-------d");
   const { images, id } = data;
   const theme = useTheme();
   const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
-  const [mainImage, setmanImage] = useState(images[id]);
+  const [mainImage, setmainImage] = useState(images[id]);
   return (
     <Wrapper>
-      <CloseIcon onClick={() => setShowSiteModal(null)} />
+      <CloseIcon onClick={() => setShowSiteModal(null)}>X</CloseIcon>
       <MarqueeImagine src={mainImage} />
       <ImageRow>
         {images.map((image, idx) => (
-          <PreviewImage src={image} key={idx} />
+          <PreviewImage
+            src={image}
+            key={idx}
+            onClick={() => setmainImage(image)}
+          />
         ))}
       </ImageRow>
     </Wrapper>

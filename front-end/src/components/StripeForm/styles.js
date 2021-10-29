@@ -11,6 +11,7 @@ export const Header = styled.span`
   font-size: 24px;
   font-family: Lobster;
   color: ${({ theme }) => theme.colors.headerTextTwo};
+  text-shadow: 1px 1px #000;
 `;
 
 export const SubHeader = styled.span`

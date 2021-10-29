@@ -20,6 +20,7 @@ export const HeaderOne = styled.h1`
   margin-bottom: 12px;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.secondary};
+  text-shadow: 1px 1px #000;
 `;
 
 export const HeaderPrimary = styled.span`

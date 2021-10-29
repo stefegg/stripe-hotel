@@ -4,7 +4,7 @@ export const Body = styled.div`
   display: ${({ showCart }) => (showCart ? "grid" : "flex")};
   grid-template-columns: 7fr 3fr;
   height: calc(100vh - 110px);
-  background: ${({ theme }) => theme.colors.tertiary};
+  background: ${({ theme }) => theme.colors.tertiaryLight};
 `;
 
 export const LeftPane = styled.div`
@@ -19,6 +19,6 @@ export const LeftPane = styled.div`
 `;
 
 export const RightPane = styled.div`
-  height: calc(100vh - 100px);
-  background: ${({ theme }) => theme.colors.headerOne};
+  height: calc(100vh - 110px);
+  background: ${({ theme }) => theme.colors.tertiary};
 `;

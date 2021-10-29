@@ -9,6 +9,8 @@ import {
   PriceWrap,
   CostAmount,
   CostWrap,
+  ImageWrapper,
+  ImageLead,
 } from "./styles";
 import { Button, CartModal, DatesModal, ImageModal } from "../index";
 import { useRecoilState } from "recoil";
@@ -30,10 +32,13 @@ const OpenPanel = ({ data }) => {
     <Wrapper>
       <Header>{title}</Header>
       <Body>
-        <RoomImage
-          src={images[id]}
-          onClick={() => setShowSiteModal(<ImageModal data={data} />)}
-        />
+        <ImageWrapper>
+          <RoomImage
+            src={images[id]}
+            onClick={() => setShowSiteModal(<ImageModal data={data} />)}
+          />
+          <ImageLead>Click image to see more room photos</ImageLead>
+        </ImageWrapper>
         <DetailWrap>
           {body.map((item, idx) => (
             <DetailItem key={idx}>{item}</DetailItem>

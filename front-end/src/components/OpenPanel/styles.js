@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  max-width: 100%;
+  max-width: 90%;
   margin: 20px 0px;
   border-radius: 4px;
 `;
@@ -43,8 +43,8 @@ export const Icon = styled.img`
 
 export const RoomImage = styled.img`
   width: 250px;
-  max-heigth: 166px;
   cursor: pointer;
+  border-radius: 4px;
 `;
 
 export const DetailWrap = styled.ul`
@@ -82,4 +82,17 @@ export const CostAmount = styled.span`
   color: ${({ theme }) => theme.colors.headerTextOne};
   margin-right: 8px;
   font-weight: 500;
+`;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;
+
+export const ImageLead = styled.span`
+  font-style: italic;
+  font-size: 10px;
+  margin-top: 14px;
 `;
